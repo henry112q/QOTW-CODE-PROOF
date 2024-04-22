@@ -15,10 +15,13 @@ def SelectingPostiveAndNegtiveNumbers(count):
                 bestLine = line
     
     # posive number is the values before the , so a single number
-    postiveNumber = float(bestLine.lstrip(",")) - startSub
+    postiveNumber = float(bestLine.split(",")[0].strip()) - startSub
     # negtive number is all the values before the : then out of this we get rid of all the values before the ,
-    negtiveNumber = float((bestLine.lstrip(":")).rstrip(",")) - startSub
-    
+    negtiveNumber = float((bestLine.split(":")[0]).split(",")[1].strip()) + startSub
+    if postiveNumber <= 0:
+        postiveNumber = 1
+    if negtiveNumber >= 0:
+        negtiveNumber = -1
     return postiveNumber , negtiveNumber
 
 firstRun = False
@@ -78,3 +81,5 @@ while True:
         # Updates the start numbers after each sequance is completed
         postiveNumber += itteration
         negtiveNumber -= itteration
+    
+    input("press enter to continue")
