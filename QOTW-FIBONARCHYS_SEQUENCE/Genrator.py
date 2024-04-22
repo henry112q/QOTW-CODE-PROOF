@@ -18,10 +18,13 @@ def SelectingPostiveAndNegtiveNumbers(count):
     postiveNumber = float(bestLine.split(",")[0].strip()) - startSub
     # negtive number is all the values before the : then out of this we get rid of all the values before the ,
     negtiveNumber = float((bestLine.split(":")[0]).split(",")[1].strip()) + startSub
+    
+    # Checks that postive an d negtive numbers are in range
     if postiveNumber <= 0:
         postiveNumber = 1
     if negtiveNumber >= 0:
         negtiveNumber = -1
+        
     return postiveNumber , negtiveNumber
 
 firstRun = False
@@ -67,16 +70,16 @@ while True:
 
         while True: # Loop for the fibonachi sequance 
             
-            if sequance[-1] < 0 and sequance[-2]<0: # Checks if the QOTW required condition is met and if so it adds to the text file the start digits and the length
+            if sequance[-1] <= 0 and sequance[-2]<= 0: # Checks if the QOTW required condition is met and if so it adds to the text file the start digits and the length
                 string = str(sequance[0])+","+str(sequance[1])+":"+str(len(sequance)-1)+"\n"
                 a.write(string)
                 break
             
+            # Adds the lastNumber and currentNumber then updates them and adds the latest number to the sequance
             nextNumber = lastNumber + currentNumber
             sequance.append(nextNumber)
             lastNumber = currentNumber
             currentNumber = nextNumber
-            print(sequance)
 
         # Updates the start numbers after each sequance is completed
         postiveNumber += itteration
