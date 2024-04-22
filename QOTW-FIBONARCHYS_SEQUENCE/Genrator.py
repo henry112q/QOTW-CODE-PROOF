@@ -5,27 +5,6 @@ def Overwrite():
     # OverWrites the file
     open(PATH,'w').close()  
 
-def SelectingPostiveAndNegtiveNumbers(count):
-    startSub = 100/(count*2)
-    bestLine = "1,-1:1"
-    # Itterates through the file to check
-    with open(PATH) as fibonachiSequence:
-        for line in fibonachiSequence:
-            if float(line.split(':')[1].strip()) > float(bestLine.split(':')[1].strip()):
-                bestLine = line
-    
-    # posive number is the values before the , so a single number
-    postiveNumber = float(bestLine.split(",")[0].strip()) - startSub
-    # negtive number is all the values before the : then out of this we get rid of all the values before the ,
-    negtiveNumber = float((bestLine.split(":")[0]).split(",")[1].strip()) + startSub
-    
-    # Checks that postive an d negtive numbers are in range
-    if postiveNumber <= 0:
-        postiveNumber = 1
-    if negtiveNumber >= 0:
-        negtiveNumber = -1
-        
-    return postiveNumber , negtiveNumber
 
 firstRun = False
 count = 1
@@ -38,8 +17,8 @@ while True:
         negtiveNumber = -2
         firstRun = True
     else:
-        postiveNumber = SelectingPostiveAndNegtiveNumbers(count)[0]
-        negtiveNumber = SelectingPostiveAndNegtiveNumbers(count)[1]
+        postiveNumber = input("POS")
+        negtiveNumber = input("NEG")
 
     itteration = 1/count
     count += 1
