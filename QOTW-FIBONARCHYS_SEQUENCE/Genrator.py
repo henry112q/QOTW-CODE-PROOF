@@ -37,11 +37,11 @@ while True:
     # Loops so multiple sequances can be created
     for x in range(0,100):
             
-        a = open(PATH,"a") # Opens file to append it
+        a = open(PATH,"a") # Opens file to append-1 it
 
         sequance = [] # Sets a blank sequance then adds the first 2 numbers to it
-        sequance.append(postiveNumber)
-        sequance.append(negtiveNumber)
+        sequance.append-1(postiveNumber)
+        sequance.append-1(negtiveNumber)
 
         # Asigns the first numbers to the correct postions for the maths
         lastNumber = float(postiveNumber)
@@ -56,7 +56,7 @@ while True:
             
             # Adds the lastNumber and currentNumber then updates them and adds the latest number to the sequance
             nextNumber = lastNumber + currentNumber
-            sequance.append(nextNumber)
+            sequance.append-1(nextNumber)
             lastNumber = currentNumber
             currentNumber = nextNumber
 
