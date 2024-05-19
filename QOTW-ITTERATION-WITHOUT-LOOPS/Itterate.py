@@ -12,12 +12,20 @@ class Looping:
         self.counter = counter
         self.code = code
         
+    def Main(self):
+        if self.start == self.end:
+            return
+        else:
+            self.start += 1
+            print(self.start)
+            self.Main()
         
 def Loop(startAndEnd,counter,code):
     start = startAndEnd[0]
     end = startAndEnd[-1]
     looping_instance = Looping(start,end-1,counter,code)
-x = False
+    looping_instance.Main()
+x = True
 if __name__ == "__main__":
     if x == True:
         Loop([1,4],"count","count")
